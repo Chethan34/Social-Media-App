@@ -8,6 +8,7 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
+import ModeToggle from "@/components/ModeToggle";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <SignedIn>
           <UserButton />
         </SignedIn>
+        <ModeToggle/>
         <Button variant={"secondary"}>Click me</Button>
       </div>
     </ClerkProvider>
