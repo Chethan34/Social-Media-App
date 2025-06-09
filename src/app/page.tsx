@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 import {
   ClerkProvider,
   SignInButton,
@@ -6,19 +7,25 @@ import {
   SignedIn,
   SignedOut,
   UserButton,
-} from '@clerk/nextjs'
+} from "@clerk/nextjs";
+
 export default function Home() {
   return (
-    <div> 
-      <ClerkProvider>
+    <ClerkProvider>
+      <div className="m-4">
         <SignedOut>
-           <SignInButton />
-              <SignUpButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-          </SignedIn>
-        </ClerkProvider>
-    </div>
+          <SignInButton mode="modal">
+            <Button>
+              Sign In
+            </Button>
+          </SignInButton>
+        </SignedOut>
+
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+        <Button variant={"secondary"}>Click me</Button>
+      </div>
+    </ClerkProvider>
   );
 }
