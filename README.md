@@ -8,3 +8,7 @@
 ## Files to Look At
 - `src/middleware.ts`
 - `components/Sidebar.tsx`
+
+## note: .env file has ur clerk credentials 
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=xyz
+CLERK_SECRET_KEY=xyz
