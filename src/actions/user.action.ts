@@ -53,16 +53,14 @@ export async function getUserByClerkId(clerkId:string){
     })
 }
 
-export async function getDbUserId(){
-    const { userId:clerkId } = await auth();
-    if(!clerkId) throw new Error("Unauthorized");
+export async function getDbUserId() {
+  const { userId: clerkId } = await auth();
+  if (!clerkId) return null; // Return null if not logged in
 
-    const user = await getUserByClerkId(clerkId);
+  const user = await getUserByClerkId(clerkId);
+  if (!user) return null;
 
-    if(!user) throw new Error("User not found");
-
-    return user.id
-
+  return user.id;
 }
 
 export async function getRandomUsers() {
